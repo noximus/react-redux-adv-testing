@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actions from "actions";
 
 class CommentBox extends Component {
   state = { comment: "" };
@@ -10,6 +12,7 @@ class CommentBox extends Component {
 
     // TODO - Call an action creator
     // And save the comment
+    this.props.saveComment(this.state.comment)
     this.setState({ comment: "" });
   };
   render() {
@@ -25,11 +28,17 @@ class CommentBox extends Component {
           rows="10"
         />
         <div>
-          <button>Sumbit Comment</button>
+          <button>Submit Comment</button>
         </div>
       </form>
     );
   }
 }
+// const mapStateToProps = state => ({});
 
-export default CommentBox;
+// const mapDispatchToProps = {};
+
+export default connect(
+  null,
+  actions
+)(CommentBox);
