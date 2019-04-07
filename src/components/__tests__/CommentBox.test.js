@@ -19,7 +19,7 @@ afterEach(() => {
 
 it("has a text area and a button", () => {
   expect(wrapped.find("textarea").length).toEqual(1);
-  expect(wrapped.find("button").length).toEqual(1);
+  expect(wrapped.find("button").length).toEqual(2);
 });
 
 describe("the text area", () => {
@@ -37,6 +37,6 @@ describe("the text area", () => {
     // expect(wrapped.find('textarea').prop("value")).toEqual("new comment");
     wrapped.find("form").simulate("submit");
     wrapped.update();
-    expect(wrapped.find("textarea").prop("value")).toEqual('');
+    expect(wrapped.find("textarea").prop("value")).toEqual("");
   });
 });

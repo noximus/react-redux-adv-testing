@@ -12,27 +12,27 @@ class CommentBox extends Component {
 
     // TODO - Call an action creator
     // And save the comment
-    this.props.saveComment(this.state.comment)
+    this.props.saveComment(this.state.comment);
     this.setState({ comment: "" });
   };
   render() {
     return (
       <div>
-      <form onSubmit={this.handleSubmit}>
-        <h4>Add a Comment</h4>
-        <textarea
-          value={this.state.comment}
-          onChange={this.handleChange}
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-        />
-        <div>
-          <button>Submit Comment</button>
-        </div>
-      </form>
-      <button onClick={this.props.fetchComments}>Fetch copmment</button>
+        <form onSubmit={this.handleSubmit}>
+          <h4>Add a Comment</h4>
+          <textarea
+            value={this.state.comment}
+            onChange={this.handleChange}
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+          />
+          <div>
+            <button>Submit Comment</button>
+          </div>
+        </form>
+        <button onClick={this.props.fetchComments}>Fetch Comments</button>
       </div>
     );
   }
